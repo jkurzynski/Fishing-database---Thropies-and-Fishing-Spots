@@ -1,0 +1,7 @@
+{
+    "Coarse fish": ["Roach", "Rudd", "Bream", "Tench", "Crucian carp", "Common carp", "Bleak",
+        "Nase", "Vimba", "Sturgeon"],
+
+    "Predatory fish": ["Pike", "Perch", "Catfish", "Eel", "Zander", "Rainbow trout", "Brown trout",
+        "Sea trout", "Grayling", "Chub", "Ide", "Asp", "Burbot"]
+}

@@ -1,0 +1,18 @@
+{
+    "Leszcz": {
+        "Bait": "Caster",
+        "Length": 35.0,
+        "Species": "Bream",
+        "Spot name": "Przylasek",
+        "Type": "Coarse",
+        "Weight": 0.0
+    },
+    "River monster": {
+        "Bait": "Live roach",
+        "Length": 0.5,
+        "Species": "Pike",
+        "Spot name": "Vistula",
+        "Type": "Predatory",
+        "Weight": 0.0
+    }
+}
