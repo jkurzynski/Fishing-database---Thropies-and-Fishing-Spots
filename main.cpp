@@ -1,4 +1,3 @@
-#include <iostream>
 #include "fish.hpp"
 #include "fishing_spots.hpp"
 #include "save.hpp"
@@ -22,6 +21,7 @@ int main(){
         switch(status){
 
             case jk::Options::Main:
+                jk::stars();
                 std::cout << "What would you like to do?\n";
                 std::cout << "1. Add\n";
                 std::cout << "2. Display\n";
@@ -31,6 +31,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -47,6 +48,7 @@ int main(){
                             status = jk::Options::Exit;
                             break;
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }
@@ -55,6 +57,7 @@ int main(){
                 
 
             case jk::Options::Add:
+                jk::stars();
                 std::cout << "What would you like to add?\n";
                 std::cout << "1. Fish\n";
                 std::cout << "2. Fishing spot\n";
@@ -64,6 +67,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -80,6 +84,7 @@ int main(){
                             status = jk::Options::Main;
                             break;
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }
@@ -88,6 +93,7 @@ int main(){
                 break;
 
             case jk::Options::Display:
+                jk::stars();
                 std::cout << "What would you like to display?\n";
                 std::cout << "1. Fish\n";
                 std::cout << "2. Fishing spot\n";
@@ -97,6 +103,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -113,6 +120,7 @@ int main(){
                             status = jk::Options::Main;
                             break;
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }
@@ -121,7 +129,7 @@ int main(){
                 break;
 
             case jk::Options::AddFish:
-                
+                jk::stars();
                 std::cout << "Which field would you like to fill?\n";
                 std::cout << "1. Species\n";
                 std::cout << "2. Length\n";
@@ -137,6 +145,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -169,6 +178,7 @@ int main(){
                             break;
 
                         case 7:
+                            jk::stars();
                             std::cout << "Clearing all fields!\n";
                             fish_global_species = "";
                             fish_global_bait = "";
@@ -183,11 +193,13 @@ int main(){
                             break;
 
                         case 8:
+                            jk::stars();
                             std::cout << "Current choices:\n";
                             jk::display_fish_global_choices();
                             break;
 
                         case 9:
+                            jk::stars();
                             fish = jk::checkFishType(jk::correct(fish_global_species));
                             if(fish_global_species.empty() || fish_global_length == 0.0 || fish_global_weight == 0 || fish_global_bait.empty() || fish_global_spot_name.empty()){
                                 if(!fish_global_species.empty()){
@@ -219,6 +231,7 @@ int main(){
                             break;
 
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }
@@ -227,7 +240,7 @@ int main(){
                 break;
 
             case jk::Options::AddSpot:
-
+                jk::stars();
                 std::cout << "Which field would you like to fill?\n";
                 std::cout << "1. Name\n";
                 std::cout << "2. Bank type\n";
@@ -242,6 +255,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -269,6 +283,7 @@ int main(){
                             break;
 
                         case 7:
+                            jk::stars();
                             std::cout << "Clearing all fields!\n";
                             spot_global_name = "";
                             spot_global_bank_type = "";
@@ -281,17 +296,20 @@ int main(){
                             break;
 
                         case 8:
+                            jk::stars();
                             std::cout << "Current choices:\n";
                             jk::display_spot_global_choices();
                             break;
 
                         case 9:
+                            jk::stars();
                             spot = jk::createSpot();
                             if(spot_global_name.empty() || spot_global_bank_type.empty() || spot_global_bottom_type.empty() || spot_global_average_depth == 0.0){
                                 if(!spot_global_name.empty()){
                                     spot->setName(spot_global_name);
                                 }
                                 else{
+                                    jk::stars();
                                     std::cout << "Spot must have a name!\nSaving FAILED!\n";
                                     delete spot;
                                     spot_object_created = 0;
@@ -322,6 +340,7 @@ int main(){
                             break;
 
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }
@@ -330,6 +349,7 @@ int main(){
                 break;
             
             case jk::Options::DisplayFish:
+                jk::stars();
                 std::cout << "What do you want to do?\n";
                 std::cout << "1. Search for fish by name\n";
                 std::cout << "2. Display fish list\n";
@@ -340,6 +360,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -347,6 +368,7 @@ int main(){
                 else{
                     switch(choice){
                         case 1:
+                            jk::stars();
                             std::cout << "Insert name of desired fish\n";
                             std::getline(std::cin >> std::ws, fish_name_search);
                             jk::load_fish(fish_name_search);
@@ -354,11 +376,13 @@ int main(){
                             break;
                         
                         case 2:
+                            jk::stars();
                             std::cout << "List of known fish:\n";
                             jk::load_fish_list();
                             break;
                         
                         case 3:
+                            jk::stars();
                             std::cout << "Insert name of fish that you want to remove:\n";
                             std::getline(std::cin >> std::ws, fish_name_search);
                             jk::remove_fish(fish_name_search);
@@ -369,6 +393,7 @@ int main(){
                             break;
 
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }
@@ -377,6 +402,7 @@ int main(){
                 break;
 
             case jk::Options::DisplaySpot:
+                jk::stars();
                 std::cout << "What do you want to do?\n";
                 std::cout << "1. Search for spot by name\n";
                 std::cout << "2. Display spots list\n";
@@ -387,6 +413,7 @@ int main(){
                 if(!std::cin) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    jk::stars();
                     std::cout << "Invalid input\n";
                     break;
                 }
@@ -394,6 +421,7 @@ int main(){
                 else{
                     switch(choice){
                         case 1:
+                            jk::stars();
                             std::cout << "Insert name of desired spot:\n";
                             std::getline(std::cin >> std::ws, spot_name_search);
                             jk::load_spot(spot_name_search);
@@ -401,11 +429,13 @@ int main(){
                             break;
                         
                         case 2:
+                            jk::stars();
                             std::cout << "List of known spots:\n";
                             jk::load_spot_list();
                             break;
 
                         case 3:
+                            jk::stars();
                             std::cout << "Insert name of spot that you want to remove:\n";
                             std::getline(std::cin >> std::ws, spot_name_search);
                             jk::remove_spot(spot_name_search);
@@ -416,6 +446,7 @@ int main(){
                             break;
 
                         default:
+                            jk::stars();
                             std::cout << "Neither option selected!\n";
                             break;
                     }

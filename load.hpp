@@ -3,7 +3,6 @@
 namespace jk{
 void load_spot(std::string& spot){
     spot = correct(spot);
-    std::cout << "**********\n";
     std::ifstream jsonIn("./fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
 
@@ -22,7 +21,6 @@ void load_spot(std::string& spot){
 }
 
 void load_spot_list(){
-    std::cout << "**********\n";
     std::ifstream jsonIn("./fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int just_a_number_for_visual_effect {1};
@@ -34,7 +32,6 @@ void load_spot_list(){
 
 void load_fish(std::string& fish){
     fish = correct(fish);
-    std::cout << "**********\n";
     std::ifstream jsonIn("./fish.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
 
@@ -55,7 +52,6 @@ void load_fish(std::string& fish){
 }
 
 void load_fish_list(){
-    std::cout << "**********\n";
     std::ifstream jsonIn("./fish.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int just_a_number_for_visual_effect {1};
@@ -63,6 +59,10 @@ void load_fish_list(){
         std::cout << just_a_number_for_visual_effect << ". " << i.key() << std::endl;
         just_a_number_for_visual_effect++;
     }
+}
+
+void stars(){
+    std::cout <<"**********\n";
 }
 
 }

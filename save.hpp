@@ -2,7 +2,7 @@
 
 namespace jk{
 void save_spot(jk::Fishing_spot* spot){
-    std::cout << "**********\nSaving: " << spot->getName() << std::endl;
+    std::cout << "Saving: " << spot->getName() << std::endl;
 
     std::ifstream jsonIn("./fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
@@ -15,7 +15,6 @@ void save_spot(jk::Fishing_spot* spot){
 
 void remove_spot(std::string& spot){
     spot = correct(spot);
-    std::cout << "**********\n";
     std::ifstream jsonIn("./fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int fate_of_the_saving {1};
@@ -60,7 +59,7 @@ void save_fish(jk::Fish* fish){
     trophy_name = correct(trophy_name);
 
     
-    std::cout << "**********\nSaving: " << trophy_name << std::endl;
+    std::cout << "Saving: " << trophy_name << std::endl;
 
     std::ifstream jsonIn("./fish.json");
     std::ifstream jsonSpot("./fishing_spots.json");
@@ -82,7 +81,6 @@ void save_fish(jk::Fish* fish){
 
 void remove_fish(std::string& fish){
     fish = correct(fish);
-    std::cout << "**********\n";
     std::ifstream jsonIn("./fish.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int fate_of_the_saving {1};
