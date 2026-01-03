@@ -23,8 +23,6 @@ public:
         m_bank_type = "";
         m_bottom_type = "";
         m_average_depth = 0.0;
-
-        std::cout << "Spot defualt constructor\n";
     }
 
     Fishing_spot(std::string name, std::string bank, std::string bottom, double depth): m_name(correct(name)), m_bank_type(correct(bank)), m_bottom_type(correct(bottom)){
@@ -36,13 +34,9 @@ public:
         else{
             throw std::invalid_argument("Depth must be greater than 0!\n");
         }
-
-        std::cout << "Spot param constructor\n";
     }
 
-    ~Fishing_spot(){
-        std::cout << "Spot destructor\n";
-    }
+    ~Fishing_spot(){}
 
     void setName(std::string name){
         if(!(name.empty())){

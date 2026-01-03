@@ -23,8 +23,6 @@ public:
         m_bait = "";
         m_length = 0.0;
         m_weight = 0.0;
-
-        std::cout << "Fish defualt constructor\n";
     }
 
     Fish(std::string name, double length, double weight, std::string bait, std::string spot_name) : m_species(correct(name)), m_bait(correct(bait)){
@@ -46,14 +44,10 @@ public:
         else{
             throw std::invalid_argument("Weight must be greater than 0!\n");
         }
-
-        std::cout << "Fish param constructor\n";
     }
 
     virtual std::string getFishType() = 0;
-    virtual ~Fish(){
-        std::cout << "Fish destructor called\n";
-    }
+    virtual ~Fish(){}
 
     void setSpecies(std::string name){
         if(!(name.empty())){
