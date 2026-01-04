@@ -155,7 +155,7 @@ public:
 
 
 jk::Fish* checkFishType(const std::string& name){
-    std::ifstream jsonIn("./fish_types.json");
+    std::ifstream jsonIn("./jsonFiles/fish_types.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
 
     for(const auto& fish : jsonData["Predatory fish"]){

@@ -4,18 +4,18 @@ namespace jk{
 void save_spot(jk::Fishing_spot* spot){
     std::cout << "Saving: " << spot->getName() << std::endl;
 
-    std::ifstream jsonIn("./fishing_spots.json");
+    std::ifstream jsonIn("./jsonFiles/fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
 
     jsonData[spot->getName()] = { {"Bank type", spot->getBankType()}, {"Bottom type", spot->getBottomType()}, {"Average depth", spot->getDepth()}};
 
-    std::ofstream jsonOut("./fishing_spots.json");
+    std::ofstream jsonOut("./jsonFiles/fishing_spots.json");
     jsonOut << std::setw(4) << jsonData;
 }
 
 void remove_spot(std::string& spot){
     spot = correct(spot);
-    std::ifstream jsonIn("./fishing_spots.json");
+    std::ifstream jsonIn("./jsonFiles/fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int fate_of_the_saving {1};
     if(jsonData.contains(spot)){
@@ -48,7 +48,7 @@ void remove_spot(std::string& spot){
         std::cout << "Spot named "<< spot << " isn't on the list!\n";
     }
 
-    std::ofstream jsonOut("./fishing_spots.json");
+    std::ofstream jsonOut("./jsonFiles/fishing_spots.json");
     jsonOut << std::setw(4) << jsonData;
 }
 
@@ -61,8 +61,8 @@ void save_fish(jk::Fish* fish){
     
     std::cout << "Saving: " << trophy_name << std::endl;
 
-    std::ifstream jsonIn("./fish.json");
-    std::ifstream jsonSpot("./fishing_spots.json");
+    std::ifstream jsonIn("./jsonFiles/fish.json");
+    std::ifstream jsonSpot("./jsonFiles/fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     nlohmann::json jsonDataSpot = nlohmann::json::parse(jsonSpot);
 
@@ -75,13 +75,13 @@ void save_fish(jk::Fish* fish){
 
     jsonData[trophy_name] = {{"Type", fish->getFishType()}, {"Length", fish->getLength()}, {"Weight", fish->getWeight()}, {"Bait", fish->getBait()}, {"Spot name", fish->getSpotName()}, {"Species", fish->getSpecies()}};
 
-    std::ofstream jsonOut("./fish.json");
+    std::ofstream jsonOut("./jsonFiles/fish.json");
     jsonOut << std::setw(4) << jsonData;
 }
 
 void remove_fish(std::string& fish){
     fish = correct(fish);
-    std::ifstream jsonIn("./fish.json");
+    std::ifstream jsonIn("./jsonFiles/fish.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int fate_of_the_saving {1};
     if(jsonData.contains(fish)){
@@ -114,7 +114,7 @@ void remove_fish(std::string& fish){
         std::cout << "Fish named "<< fish << " isn't on the list!\n";
     }
 
-    std::ofstream jsonOut("./fish.json");
+    std::ofstream jsonOut("./jsonFiles/fish.json");
     jsonOut << std::setw(4) << jsonData;
 }
 }

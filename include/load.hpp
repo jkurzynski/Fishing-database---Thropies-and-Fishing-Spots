@@ -3,7 +3,7 @@
 namespace jk{
 void load_spot(std::string& spot){
     spot = correct(spot);
-    std::ifstream jsonIn("./fishing_spots.json");
+    std::ifstream jsonIn("./jsonFiles/fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
 
     if(jsonData.contains(spot)){
@@ -21,7 +21,7 @@ void load_spot(std::string& spot){
 }
 
 void load_spot_list(){
-    std::ifstream jsonIn("./fishing_spots.json");
+    std::ifstream jsonIn("./jsonFiles/fishing_spots.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int just_a_number_for_visual_effect {1};
     for(const auto& i : jsonData.items()){
@@ -32,7 +32,7 @@ void load_spot_list(){
 
 void load_fish(std::string& fish){
     fish = correct(fish);
-    std::ifstream jsonIn("./fish.json");
+    std::ifstream jsonIn("./jsonFiles/fish.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
 
     if(jsonData.contains(fish)){
@@ -52,7 +52,7 @@ void load_fish(std::string& fish){
 }
 
 void load_fish_list(){
-    std::ifstream jsonIn("./fish.json");
+    std::ifstream jsonIn("./jsonFiles/fish.json");
     nlohmann::json jsonData = nlohmann::json::parse(jsonIn);
     int just_a_number_for_visual_effect {1};
     for(const auto& i : jsonData.items()){

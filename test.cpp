@@ -1,8 +1,8 @@
-#include "fish.hpp"
-#include "fishing_spots.hpp"
-#include "save.hpp"
-#include "load.hpp"
-#include "options.hpp"
+#include "./include/fish.hpp"
+#include "./include/fishing_spots.hpp"
+#include "./include/save.hpp"
+#include "./include/load.hpp"
+#include "./include/options.hpp"
 
 
 int main(){
