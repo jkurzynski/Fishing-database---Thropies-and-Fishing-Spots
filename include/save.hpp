@@ -12,6 +12,10 @@ void save_spot(jk::Fishing_spot* spot){
     std::ofstream jsonOut("./jsonFiles/fishing_spots.json");
     jsonOut << std::setw(4) << jsonData;
 }
+/**
+ * Function allows to add new or overwrite already existing fishing spots. It reads whole file to
+ * keep already existing objects intact and (if needed) find object to overwrite.
+ */
 
 void remove_spot(std::string& spot){
     spot = correct(spot);
@@ -24,10 +28,10 @@ void remove_spot(std::string& spot){
         std::cout << "2. Yes\n";
         std::cin >> fate_of_the_saving;
         if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Invalid input\n";
-                }
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input\n";
+        }
         else{
             switch(fate_of_the_saving){
                 case 1:
@@ -51,6 +55,10 @@ void remove_spot(std::string& spot){
     std::ofstream jsonOut("./jsonFiles/fishing_spots.json");
     jsonOut << std::setw(4) << jsonData;
 }
+/**
+ * Function allows the removal of already existing fishing spots. It reads the whole file to check if the object
+ * exists, and if it does, function requires second confirmation before removing the found object.
+ */
 
 void save_fish(jk::Fish* fish){
     std::string trophy_name;
@@ -78,6 +86,12 @@ void save_fish(jk::Fish* fish){
     std::ofstream jsonOut("./jsonFiles/fish.json");
     jsonOut << std::setw(4) << jsonData;
 }
+/**
+ * Function allows to add new or overwrite already existing fish. It reads whole file to
+ * keep already existing objects intact and (if needed) find object to overwrite.
+ * If given fish's spot was previously unknown, the function will inform about it and create empty spot object
+ * so user can fill it's fields later.
+ */
 
 void remove_fish(std::string& fish){
     fish = correct(fish);
@@ -90,10 +104,10 @@ void remove_fish(std::string& fish){
         std::cout << "2. Yes\n";
         std::cin >> fate_of_the_saving;
         if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Invalid input\n";
-                }
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input\n";
+        }
         else{
             switch(fate_of_the_saving){
                 case 1:
@@ -117,4 +131,8 @@ void remove_fish(std::string& fish){
     std::ofstream jsonOut("./jsonFiles/fish.json");
     jsonOut << std::setw(4) << jsonData;
 }
+/**
+ * Function allows the removal of already existing fish. It reads the whole file to check if the object
+ * exists, and if it does, function requires second confirmation before removing the found object.
+ */
 }

@@ -9,4 +9,8 @@ std::string correct(std::string word){
         }
     return word;
 }
+/**
+ * Purpose of correct() function is to make sure that every word/sentence begins with upper letter.
+ * It makes everything look better, but also guarantees that there will be no copies of intended same object.
+ */
 }

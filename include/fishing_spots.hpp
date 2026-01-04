@@ -35,6 +35,7 @@ public:
             throw std::invalid_argument("Depth must be greater than 0!\n");
         }
     }
+    ///Depending on whether user filled every spot's attribute. The different constructors are used.
 
     ~Fishing_spot(){}
 
@@ -93,11 +94,6 @@ public:
     double getDepth() const{
         return m_average_depth;
     }
-
-    friend std::ostream& operator<<(std::ostream& os, const Fishing_spot& spot) {
-        os << spot.m_name;
-        return os;
-    }
 };
 
 jk::Fishing_spot* createSpot(){
@@ -108,6 +104,10 @@ jk::Fishing_spot* createSpot(){
         return new Fishing_spot();
     }
 }
+/**
+ * Function decides whether to create the object using default or parametrized constructor.
+ * It checks if every field has been filled by user.
+ */
 
 void display_spot_global_choices(){
     std::cout << "Name: " << correct(spot_global_name) << std::endl;
@@ -115,5 +115,8 @@ void display_spot_global_choices(){
     std::cout << "Bottom type: " << correct(spot_global_bottom_type) << std::endl;
     std::cout << "Average depth: " << spot_global_average_depth << "m" << std::endl;
 }
-
+/**
+ * Function displays attributes of the spot. It isn't connected with object creation on purpose.
+ * By that, any changes won't affect the object, unless they are saved with save_spot() function.
+ */
 }

@@ -45,9 +45,11 @@ public:
             throw std::invalid_argument("Weight must be greater than 0!\n");
         }
     }
+    ///Depending on whether user filled every fish's attribute. The different constructors are used.
 
     virtual std::string getFishType() = 0;
     virtual ~Fish(){}
+    ///Virtual destructor and function because there are derived classes.
 
     void setSpecies(std::string name){
         if(!(name.empty())){
@@ -135,6 +137,7 @@ public:
 
     ~Predatory(){}
 };
+///Derived class, reserved for predatory fish. It adds fish type.
 
 class Coarse : public Fish{
 private:
@@ -152,7 +155,7 @@ public:
 
     ~Coarse(){}
 };
-
+///Derived class, reserved for coarse fish. It adds fish type.
 
 jk::Fish* checkFishType(const std::string& name){
     std::ifstream jsonIn("./jsonFiles/fish_types.json");
@@ -183,6 +186,12 @@ jk::Fish* checkFishType(const std::string& name){
     throw std::invalid_argument("Fish not found\n");
     
 }
+/**
+ * Function allows automatic detection of the fish type (predatory or coarse), based on its species.
+ * Species are stored in separate json file.
+ * Function also checks whether every attribute has been filled, then creates new object using either
+ * default or parametrized constructor.
+ */
 
 void display_fish_global_choices(){
     std::cout << "Species: " << correct(fish_global_species) << std::endl;
@@ -191,4 +200,8 @@ void display_fish_global_choices(){
     std::cout << "Bait: " << correct(fish_global_bait) << std::endl;
     std::cout << "Spot: " << correct(fish_global_spot_name) << std::endl;
 }
+/**
+ * Function displays attributes of the fish. It isn't connected with object creation on purpose.
+ * By that, any changes won't affect the object, unless they are saved with save_fish() function.
+ */
 }

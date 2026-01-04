@@ -19,6 +19,10 @@ void load_spot(std::string& spot){
         std::cout << "Spot named "<< spot << " isn't on the list!\n";
     }
 }
+/**
+ * Function allows to display one specified fishing spot and it's attributes. Function doesn't affect the content of
+ * the file, only reads from it.
+ */
 
 void load_spot_list(){
     std::ifstream jsonIn("./jsonFiles/fishing_spots.json");
@@ -29,6 +33,11 @@ void load_spot_list(){
         just_a_number_for_visual_effect++;
     }
 }
+/**
+ * Function allows to display list of existing fishing spots, but only their names, not attributes.
+ * It's purpose is to let user know what one can type in load_spot() function without getting an error.
+ * Function doesn't affect the content of the file, only reads from it.
+ */
 
 void load_fish(std::string& fish){
     fish = correct(fish);
@@ -50,6 +59,10 @@ void load_fish(std::string& fish){
         std::cout << "Fish named "<< fish << " isn't on the list!\n";
     }
 }
+/**
+ * Function allows to display one specified fish and it's attributes. Function doesn't affect the content of
+ * the file, only reads from it.
+ */
 
 void load_fish_list(){
     std::ifstream jsonIn("./jsonFiles/fish.json");
@@ -60,9 +73,17 @@ void load_fish_list(){
         just_a_number_for_visual_effect++;
     }
 }
+/**
+ * Function allows to display list of existing fishes, but only their thropy names (not species), not attributes.
+ * It's purpose is to let user know what one can type in load_fish() function without getting an error.
+ * Function doesn't affect the content of the file, only reads from it.
+ */
 
 void stars(){
     std::cout <<"**********\n";
 }
+/**
+ * Function only for visual effect, used as text separator.
+ */
 
 }
