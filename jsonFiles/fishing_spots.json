@@ -1,7 +1,12 @@
 {
     "Przylasek": {
-        "Average depth": 2.0,
+        "Average depth": 3.5,
         "Bank type": "Lake",
+        "Bottom type": "Covered with greens"
+    },
+    "Vistula": {
+        "Average depth": 2.3,
+        "Bank type": "River",
         "Bottom type": "Rocky"
     }
 }

@@ -28,9 +28,7 @@ int main(){
                 std::cout << "0. Exit\n";
                 std::cin >> choice;
 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;
@@ -64,9 +62,7 @@ int main(){
                 std::cout << "0. Go back to main menu\n";
                 std::cin >> choice;
 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;
@@ -100,9 +96,7 @@ int main(){
                 std::cout << "0. Go back to main menu\n";
                 std::cin >> choice;
 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;
@@ -142,9 +136,7 @@ int main(){
                 std::cout << "0. Go back to main menu\n";
                 std::cin >> choice;
                 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;
@@ -158,13 +150,33 @@ int main(){
                             break;
 
                         case 2:
-                            std::cout << "Insert length: ";
-                            std::cin >> fish_global_length;
+                            while(true){
+                                std::cout << "Insert length [cm]: ";
+                                std::cin >> fish_global_length;
+                                if(!jk::checkInputType(fish_global_length)){
+                                    jk::stars();
+                                    std::cout << "Must be a positive number!\n";
+                                    continue;
+                                }
+                                else{
+                                    break;
+                                }
+                            }
                             break;
 
                         case 3:
-                            std::cout << "Insert weight: ";
-                            std::cin >> fish_global_weight;
+                            while(true){
+                                std::cout << "Insert weight [kg]: ";
+                                std::cin >> fish_global_weight;
+                                if(!jk::checkInputType(fish_global_weight)){
+                                    jk::stars();
+                                    std::cout << "Must be a positive number!\n";
+                                    continue;
+                                }
+                                else{
+                                    break;
+                                }
+                            }
                             break;
 
                         case 4:
@@ -252,9 +264,7 @@ int main(){
                 std::cout << "0. Go back to main menu\n";
                 std::cin >> choice;
                 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;
@@ -278,8 +288,18 @@ int main(){
                             break;
 
                         case 4:
-                            std::cout << "Insert average depth: ";
-                            std::cin >> spot_global_average_depth;
+                            while(true){
+                                std::cout << "Insert average depth [m]: ";
+                                std::cin >> spot_global_average_depth;
+                                if(!jk::checkInputType(spot_global_average_depth)){
+                                    jk::stars();
+                                    std::cout << "Must be a positive number!\n";
+                                    continue;
+                                }
+                                else{
+                                    break;
+                                }
+                            }
                             break;
 
                         case 7:
@@ -357,9 +377,7 @@ int main(){
                 std::cout << "0. Go back to main menu\n";
                 std::cin >> choice;
                 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;
@@ -410,9 +428,7 @@ int main(){
                 std::cout << "0. Go back to main menu\n";
                 std::cin >> choice;
                 
-                if(!std::cin) {
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if(!jk::checkInputType()){
                     jk::stars();
                     std::cout << "Invalid input\n";
                     break;

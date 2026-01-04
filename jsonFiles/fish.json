@@ -1,1 +1,18 @@
-{}
+{
+    "Test pike": {
+        "Bait": "Living rudd",
+        "Length": 72.0,
+        "Species": "Pike",
+        "Spot name": "Vistula",
+        "Type": "Predatory",
+        "Weight": 2.3
+    },
+    "The biggest roach ever": {
+        "Bait": "White worm",
+        "Length": 38.0,
+        "Species": "Roach",
+        "Spot name": "Przylasek",
+        "Type": "Coarse",
+        "Weight": 0.74
+    }
+}
